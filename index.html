@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,21 +12,28 @@
 </head>
 <body>
     <div class="hero_img">
-        <img>
-        <img>
+        <img class="herojai" src="assets/hero_img.svg" alt="herojai">
     </div>
     <div class="container">
         <div class="header">
             <div class="logo">
-                <a href="#"><img src="assets/Logo.svg"></a>
+                <a href="#"><img src="assets/Logo.svg" alt="logo"></a>
             </div>
+            <nav class="navbar">
+                <div class="menu">
+                    <ul>
+                        <a href="#projects">Projects</a>
+                        <a href="#technologies">Technologies</a>
+                        <a href="#aboutme">About me</a> 
+                    </ul>
+                    <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </div>
 
-            <div class="menu">
-                <a href="#projects">Projects</a>
-                <a href="#technologies">Technologies</a>
-                <a href="#aboutme">About me</a> 
-            </div>
-
+            </nav>
             <div class="social">
                 <a href="#"><img src="assets/Icon.svg" alt="Icon"></a>
                 <a href="#" class="linkin"><img src="assets/Union.svg" alt="LinkIn"></a>
@@ -38,8 +46,22 @@
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
-            <button>Let's begin</button>
+            <button>Let’s begin</button>
         </div>
     </div>
 </body>
+<script>
+    const hamburger = document.querySelector(".hamburger");
+    const menu = document.querySelector(".menu");
+
+    hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    menu.classList.toggle("active");
+})
+
+    document.querySelectorAll("nav-link").forEach(n => n.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    menu.classList.remove("active");
+}))
+</script>
 </html>
